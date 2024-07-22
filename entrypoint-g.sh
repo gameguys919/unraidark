@@ -74,6 +74,7 @@ echo "moving cfgs"
 sleep 10
 cd /
 rm -R data
+mkdir /data/
 mkdir /data/serverfiles/
 mkdir /data/serverfiles/ShooterGame/
 mkdir /data/serverfiles/ShooterGame/Saved/
