@@ -2,12 +2,6 @@
 
 # move files to share
 echo "moving files to data dir"
-rm -R /data
-sleep 10
-mv /tmpdata/data /data
-sleep 10
-chmod -R 777 /data
-sleep 5
 
 exit_handler() {
 # Execute the shutdown commands
@@ -75,5 +69,12 @@ export HOME=/data
 echo -e ""
 echo -e "Switch to user ${USER}"
 echo -e "================================="
+echo "moving cfgs"
+sleep 5
+mv /tmpcfg/_default.cfg /data/config-lgsm/arkserver/arkserver.cfg
+mv /tmpcfg/GameUserSettings.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
+mv /tmpcfg/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
+echo "cfgs moved"
+sleep 5
 exec gosu "${USER}" /app/entrypoint-user.sh &
 wait
