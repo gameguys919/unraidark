@@ -70,8 +70,16 @@ echo -e ""
 echo -e "Switch to user ${USER}"
 echo -e "================================="
 echo "moving cfgs"
-sleep 5
+sleep 10
 cd /
+&& mkdir /data/config-lgsm/ \
+&& mkdir /data/config-lgsm/arkserver/ \
+&& mkdir /data/serverfiles/ \
+&& mkdir /data/serverfiles/ShooterGame/ \
+&& mkdir /data/serverfiles/ShooterGame/Saved/ \
+&& mkdir /data/serverfiles/ShooterGame/Saved/Config/ \
+&& mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/ \
+sleep 10
 mv /tmpcfg/_default.cfg /data/config-lgsm/arkserver/arkserver.cfg
 mv /tmpcfg/GameUserSettings.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 mv /tmpcfg/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
