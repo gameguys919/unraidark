@@ -71,9 +71,11 @@ echo -e "Switch to user ${USER}"
 echo -e "================================="
 echo "moving cfgs"
 sleep 5
+cd /
 mv /tmpcfg/_default.cfg /data/config-lgsm/arkserver/arkserver.cfg
 mv /tmpcfg/GameUserSettings.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 mv /tmpcfg/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
+cd /app
 echo "cfgs moved"
 sleep 5
 exec gosu "${USER}" /app/entrypoint-user.sh &
