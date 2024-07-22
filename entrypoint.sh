@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # move files to share
-mv /tmpdata/data /
+echo "moving files to data dir"
+cd /
+mv /tmpdata/data/ /
+cd -
 
 exit_handler() {
 # Execute the shutdown commands
