@@ -1,5 +1,4 @@
 #!/bin/bash
-apt install rename
 echo "rename installed"
 sleep 5
 # move files to share
@@ -74,7 +73,7 @@ echo -e "================================="
 echo "moving cfgs"
 sleep 10
 cd /
-rename -v 's/tmpcfg/data/' *
+mmv -r 'tmpcfg' 'data'
 cd /app
 echo "cfgs moved"
 sleep 5
