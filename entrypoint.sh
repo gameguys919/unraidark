@@ -1,5 +1,7 @@
 #!/bin/bash
-
+apt install rename
+echo "rename installed"
+sleep 5
 # move files to share
 echo "moving files to data dir"
 
