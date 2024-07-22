@@ -73,7 +73,8 @@ echo -e "================================="
 echo "moving cfgs"
 sleep 10
 cd /
-mmv -r 'tmpcfg' 'data'
+rm -R data
+mv tmpcfg data
 cd /app
 echo "cfgs moved"
 sleep 5
