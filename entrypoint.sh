@@ -3,6 +3,8 @@
 # move files to share
 echo "moving files to data dir"
 mv /tmpdata /data
+sleep 10
+chmod -R 777 /data
 sleep 5
 
 exit_handler() {
@@ -71,4 +73,5 @@ export HOME=/data
 echo -e ""
 echo -e "Switch to user ${USER}"
 echo -e "================================="
-exec gosu "${USER}" /app/entrypoint-user.sh
+exec gosu "${USER}" /app/entrypoint-user.sh &
+wait
