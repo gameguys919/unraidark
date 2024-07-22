@@ -3,7 +3,7 @@
 # move files to share
 echo "moving files to data dir"
 cd /
-mv /tmpdata/data/ /
+mv /tmpdata /data
 cd -
 
 exit_handler() {
