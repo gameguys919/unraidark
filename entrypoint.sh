@@ -3,6 +3,7 @@
 # move files to share
 echo "moving files to data dir"
 mv /tmpdata /data
+sleep 5
 
 exit_handler() {
 # Execute the shutdown commands
