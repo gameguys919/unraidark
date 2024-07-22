@@ -1,6 +1,13 @@
 #!/bin/bash
-echo "rename installed"
-sleep 5
+echo "config installed"
+sleep 7
+cd /
+sleep 3
+rm -R /data
+mv tmpcfg data
+sleep 15
+cd -
+sleep3
 # move files to share
 echo "moving files to data dir"
 
@@ -70,21 +77,6 @@ export HOME=/data
 echo -e ""
 echo -e "Switch to user ${USER}"
 echo -e "================================="
-echo "moving cfgs"
-sleep 10
-cd /
-rm -R data
-mkdir /data/
-mkdir /data/serverfiles/
-mkdir /data/serverfiles/ShooterGame/
-mkdir /data/serverfiles/ShooterGame/Saved/
-mkdir /data/serverfiles/ShooterGame/Saved/Config
-mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer
-mv /tmpcfg/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
-mv /tmpcfg/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
-mv /tmpcfg/config-lgsm/arkserver/_default.cfg /data/config-lgsm/arkserver/arkserver.cfg
-cd /app
-echo "cfgs moved"
-sleep 5
+
 exec gosu "${USER}" /app/entrypoint-user.sh &
 wait
