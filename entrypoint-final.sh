@@ -7,7 +7,7 @@ rm -R /data
 mv tmpcfg data
 sleep 15
 cd -
-sleep3
+sleep 3
 # move files to share
 echo "moving files to data dir"
 
