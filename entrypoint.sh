@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # move files to share
-echo "moving files to data dir"
+echo "moving files to data"
 cd /
 mv /tmpdata /data
 cd -
