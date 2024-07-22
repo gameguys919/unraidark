@@ -74,6 +74,9 @@ echo "moving cfgs"
 sleep 10
 cd /
 rm -R data
+mkdir /data/serverfiles/
+mkdir /data/serverfiles/ShooterGame/
+mkdir /data/serverfiles/ShooterGame/Saved/
 mkdir /data/serverfiles/ShooterGame/Saved/Config
 mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer
 mv /tmpcfg/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
