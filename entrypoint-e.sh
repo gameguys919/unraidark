@@ -81,7 +81,7 @@ mkdir /data/serverfiles/ShooterGame/Saved/Config
 mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer
 mv /tmpcfg/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
 mv /tmpcfg/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
-mv /tmpcfg/config-lgsm/arkserver/arkserver.cfg /data/config-lgsm/arkserver/arkserver.cfg
+mv /tmpcfg/config-lgsm/arkserver/_default.cfg /data/config-lgsm/arkserver/arkserver.cfg
 cd /app
 echo "cfgs moved"
 sleep 5
