@@ -4,7 +4,7 @@
 echo "moving files to data dir"
 rm -R /data
 sleep 10
-mv /tmpdata /data
+mv /tmpdata/data /data
 sleep 10
 chmod -R 777 /data
 sleep 5
