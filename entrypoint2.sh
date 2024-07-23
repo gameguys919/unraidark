@@ -12,7 +12,7 @@ mkdir /data/serverfiles/ShooterGame/Saved/
 mkdir /data/serverfiles/ShooterGame/Saved/Config/
 mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/
 wget "$_default" -O /data/config-lgsm/arkserver/arkserver.cfg
-wget "$$GameUserSettings" -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
+wget "$GameUserSettings" -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 wget "$Game" -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
 sleep 15
 cd -
