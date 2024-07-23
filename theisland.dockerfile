@@ -21,27 +21,6 @@ RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.co
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
   fi
-WORKDIR /
-
-RUN mkdir /data/test \
-&& mkdir /data/config-lgsm/ \
-&& mkdir /data/config-lgsm/arkserver/ \
-&& mkdir /data/serverfiles/ \
-&& mkdir /data/serverfiles/ShooterGame/ \
-&& mkdir /data/serverfiles/ShooterGame/Saved/ \
-&& mkdir /data/serverfiles/ShooterGame/Saved/Config/ \
-&& mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/ \
-&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/_default01.cfg -P /data/config-lgsm/arkserver/ \
-&& mv /data/config-lgsm/arkserver/_default01.cfg /data/config-lgsm/arkserver/_default.cfg \
-&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/GameUserSettings01.ini -P /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/ \
-&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/Game01.ini -P /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/ \
-&& mv /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings01.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini \
-&& mv /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game01.ini /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini \
-&& chmod -R 777 /data/ \
-&& chmod -R 777 /app/ \
-&& mv data tmpcfg 
-
-WORKDIR /app
 
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
@@ -49,8 +28,6 @@ RUN date > /build-time.txt
 
 RUN rm entrypoint.sh \
 && echo "starting entrypoint update" \
-&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/entrypoint-.sh \
-&& mv entrypoint-.sh entrypoint.sh \
-&& cat entrypoint.sh \
+&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/entrypoint.sh \
 && echo "downloaded"
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
