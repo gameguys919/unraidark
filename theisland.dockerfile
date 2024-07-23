@@ -27,7 +27,7 @@ HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/en
 RUN date > /build-time.txt
 
 RUN rm entrypoint.sh \
-&& echo "starting entrypoint update" \
-&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/entrypoint.sh \
-&& echo "downloaded"
+&& echo "starting entrypoint update -" \
+&& wget https://raw.githubusercontent.com/gameguys919/unraidark/main/entrypointark.sh -O entrypoint.sh \
+&& echo "downloaded entrypoint.sh"
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
