@@ -4,7 +4,9 @@ sleep 7
 cd /
 sleep 3
 rm -R /data
-mv tmpcfg data
+mv tmpcfg/config-lgsm data
+mv tmpcfg/serverfiles data
+mv tmpcfg/test data
 sleep 15
 cd -
 sleep 3
