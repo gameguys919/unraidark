@@ -3,10 +3,17 @@ echo "config installed"
 sleep 7
 cd /
 sleep 3
-rm -R /data
-mv tmpcfg/config-lgsm data
-mv tmpcfg/serverfiles data
-mv tmpcfg/test data
+mkdir /data/test
+mkdir /data/config-lgsm/
+mkdir /data/config-lgsm/arkserver/
+mkdir /data/serverfiles/
+mkdir /data/serverfiles/ShooterGame/
+mkdir /data/serverfiles/ShooterGame/Saved/
+mkdir /data/serverfiles/ShooterGame/Saved/Config/
+mkdir /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/
+wget $_default.cfg\ -O /data/config-lgsm/arkserver/arkserver.cfg
+wget $GameUserSettingsini\ -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
+wget $Gameini\ -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
 sleep 15
 cd -
 sleep 3
