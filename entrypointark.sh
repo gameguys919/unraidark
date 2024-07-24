@@ -3,9 +3,6 @@ echo "config installed"
 sleep 7
 cd /
 sleep 3
-mv tmpcfg/config-lgsm data
-mv tmpcfg/serverfiles data
-mv tmpcfg/test data
 wget "$arkservercfg" -O /data/config-lgsm/arkserver/arkserver.cfg
 wget "$GameUserSettings" -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 wget "$Game" -O /data/serverfiles/ShooterGame/Saved/Config/LinuxServer/Game.ini
