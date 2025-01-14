@@ -22,9 +22,9 @@ for node version manager we can tun the installer: `wget -qO- https://raw.github
 
 if you have some trouble installing node version manager just reach out to me in Discord
 
-after you sucessfully installed NVM you have to install nodejs version 20 with `nvm install 20`
+it could be that you have to reboot the container after you installed nvm
 
-it could be that you have to reboot the container after you installed nodejs
+after you sucessfully installed NVM you have to install nodejs version 20 with `nvm install 20`
 ### Blueprint install 
 
 we have to instal yarn with `npm i -g yarn`
