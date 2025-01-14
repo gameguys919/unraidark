@@ -28,4 +28,6 @@ after you sucessfully installed NVM you have to install nodejs version 20 with `
 we have to instal yarn with `npm i -g yarn`
 after this we just have to run yarn in your dircetory so just execute `yarn` and `yarn install` in command line
 
+download latest Blueprint release with `wget "$(curl -s https://api.github.com/repos/BlueprintFramework/framework/releases/latest | grep 'browser_download_url' | cut -d '"' -f 4)" -O release.zip` when its done downloading just unzip it with `unzip release.zip`
+
 
