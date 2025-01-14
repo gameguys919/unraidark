@@ -18,7 +18,7 @@ we have to install some stuff:
 
 for the dependencies just use the command `microdnf install <your dependencies -y>` so you can basically just do `microdnf install ca-certificates curl gnupg nano wget git zip unzip -y`
 
-for node version manager we can tun the installer: `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash``
+for node version manager we can tun the installer: `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
 
 if you have some trouble installing node version manager just reach out to me in Discord
 
