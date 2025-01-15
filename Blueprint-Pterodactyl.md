@@ -21,9 +21,10 @@ we have to install some stuff:
 -   git 
 -   zip
 -   unzip
+-   findutils
 -   [Node version manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) (i tried it with manually installing nodejs but continuing with the install of blueprint i had some errors i couldnt fix)
 
-for the dependencies just use the command `microdnf install <your dependencies -y>` so you can basically just do `microdnf install ca-certificates curl gnupg nano wget git zip unzip -y`
+for the dependencies just use the command `microdnf install <your dependencies -y>` so you can basically just do `microdnf install ca-certificates curl gnupg nano wget git zip unzip findutils -y`
 
 for node version manager we can tun the installer: `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
 
