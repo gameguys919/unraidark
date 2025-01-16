@@ -19,11 +19,4 @@ if [ ! -f "$FILE" ]; then
     ./blueprint.sh
     adduser --user-group www-data
     chmod -R 777 /var/www/html
-    # Place the commands you want to execute here
-    # Example: Create the blueprint.sh file or other tasks
-    # touch "$FILE"  # Uncomment if you want to create the file
-
-else
-    echo "File exists. Entering the else block..."
-    # Add your commands here for the 'else' block
 fi
