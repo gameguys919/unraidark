@@ -6,12 +6,6 @@ FILE="/var/www/html/blueprint.sh"
 # Check if the file does not exist
 if [ ! -f "$FILE" ]; then
     echo "File $FILE does not exist. Executing the script..."
-    
-    # Place the commands you want to execute here
-    # Example: Create the blueprint.sh file or other tasks
-    # touch "$FILE"  # Uncomment if you want to create the file
-
-else
     microdnf install -y ca-certificates curl gnupg nano wget git zip unzip findutils
     curl -fsSL https://rpm.nodesource.com/setup_20.x | bash - && \
     microdnf install -y nodejs && \
@@ -25,4 +19,10 @@ else
     ./blueprint.sh
     adduser --user-group www-data
     chmod -R 777 /var/www/html
+    # Place the commands you want to execute here
+    # Example: Create the blueprint.sh file or other tasks
+    # touch "$FILE"  # Uncomment if you want to create the file
+
+else
+    
 fi
