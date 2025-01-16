@@ -24,5 +24,6 @@ if [ ! -f "$FILE" ]; then
     # touch "$FILE"  # Uncomment if you want to create the file
 
 else
-    
+    echo "File exists. Entering the else block..."
+    # Add your commands here for the 'else' block
 fi
