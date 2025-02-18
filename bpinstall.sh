@@ -30,3 +30,4 @@ if [ ! -f "$FILE" ]; then
     # Example: Create the blueprint.sh file or other tasks
     # touch "$FILE"  # Uncomment if you want to create the file
 fi
+yacron -c /etc/yacron/yacron.yml &
