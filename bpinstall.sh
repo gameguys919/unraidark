@@ -18,6 +18,7 @@ if [ ! -f "$FILE" ]; then
     microdnf install -y git
     microdnf install -y zip
     microdnf install -y findutils
+    microdnf install -y jq
     wget "$(curl -s https://api.github.com/repos/BlueprintFramework/framework/releases/latest | jq -r '.assets[] | select(.name=="release.zip") | .browser_download_url')" -O release.zip
     unzip -o release.zip
     echo -e "DOCKER='n'\nFOLDER='/var/www/html'" > .blueprintrc
