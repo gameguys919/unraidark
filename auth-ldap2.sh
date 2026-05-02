@@ -22,7 +22,7 @@ msg_ok()    { local msg="$1"; echo -e "${BFR} ${CM} ${GN}${msg}${CL}"; }
 msg_error() { local msg="$1"; echo -e "${BFR} ${CROSS} ${RD}${msg}${CL}"; exit 1; }
 
 # ─── Nur auf Proxmox Host ausführen ───────────────────────────────────────────
-if [ ! -f /etc/pve/version ]; then
+if [ ! -d /etc/pve ]; then
   msg_error "Dieses Script muss auf dem Proxmox Host ausgeführt werden!"
 fi
 
