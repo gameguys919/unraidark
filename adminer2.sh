@@ -27,15 +27,12 @@ function update_script() {
     exit
   fi
   msg_info "Updating Adminer"
-  ADMINER_VERSION=$(curl -s https://api.github.com/repos/vrana/adminer/releases/latest \
-    | grep -oP '"tag_name":"\K[^"]+' | sed 's/v//')
-  if [[ -z "$ADMINER_VERSION" ]]; then
-    msg_error "Could not determine Adminer version."
+  wget -qO /var/www/adminer/adminer.php https://www.adminer.org/latest.php
+  if [[ $? -ne 0 ]]; then
+    msg_error "Could not download latest Adminer."
     exit 1
   fi
-  wget -qO /var/www/adminer/adminer.php \
-    "https://github.com/vrana/adminer/releases/download/v${ADMINER_VERSION}/adminer-${ADMINER_VERSION}.php"
-  msg_ok "Updated to version ${ADMINER_VERSION}"
+  msg_ok "Updated to latest version"
   msg_info "Restarting nginx"
   systemctl restart nginx
   msg_ok "Restarted nginx"
@@ -74,16 +71,12 @@ msg_ok "Dependencies Installed"
 
 msg_info "Downloading Adminer"
 pct exec "$CTID" -- bash -c "
-  ADMINER_VERSION=\$(curl -s https://api.github.com/repos/vrana/adminer/releases/latest \
-    | grep -oP '\"tag_name\":\"\K[^\"]+' | sed 's/v//')
-  if [[ -z \"\$ADMINER_VERSION\" ]]; then
-    echo 'Could not determine Adminer version!'
+  mkdir -p /var/www/adminer
+  wget -qO /var/www/adminer/adminer.php https://www.adminer.org/latest.php
+  if [[ \$? -ne 0 ]]; then
+    echo 'Could not download Adminer!'
     exit 1
   fi
-  mkdir -p /var/www/adminer
-  wget -qO /var/www/adminer/adminer.php \
-    \"https://github.com/vrana/adminer/releases/download/v\${ADMINER_VERSION}/adminer-\${ADMINER_VERSION}.php\"
-  echo \"\$ADMINER_VERSION\" > /var/www/adminer/version.txt
 " &>/dev/null
 msg_ok "Adminer Downloaded"
 
