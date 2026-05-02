@@ -115,7 +115,7 @@ msg_ok "Binary heruntergeladen"
 
 # ─── Systemd Service erstellen ────────────────────────────────────────────────
 msg_info "Erstelle Systemd Service"
-pct exec "$CT_ID" -- bash -c "cat > /etc/systemd/system/authentik-ldap.service << 'EOF'
+pct exec "$CT_ID" -- bash -c "cat > /etc/systemd/system/authentik-ldap.service << EOF
 [Unit]
 Description=Authentik LDAP Outpost
 After=network.target
